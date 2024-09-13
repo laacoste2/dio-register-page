@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Container = styled.main`
     width: 100%;
@@ -12,8 +12,29 @@ export const Container = styled.main`
     align-items: center;
 `
 
+export const FazerLoginText = styled.span`
+    color: #23DD7A;
+
+    &:hover{
+        cursor: pointer;
+    }
+`
+
+export const TenhoContaText  = styled.p`
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+` 
+
 export const Wrapper = styled.div`
-    max-width: 300px;
+    max-width: 372px;
+
+    Button{
+        max-width: 280px;
+    }
 `
 
 export const Column = styled.div`
@@ -40,7 +61,7 @@ export const Title = styled.h2`
     color: #FFFFFF;
 `
 
-export const TitleLogin = styled.p`
+export const TitleRegister = styled.p`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
@@ -49,32 +70,11 @@ export const TitleLogin = styled.p`
     margin-bottom: 8px;
 `
 
-export const SubtitleLogin = styled.p`
+export const SubtitleRegister = styled.p`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 25px;
-    margin-bottom: 35px;
-`
-
-
-export const EsqueciText  = styled.p`
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 19px;
-
-    color: #E5E044;
-` 
-
-export const CriarText =  styled.p`
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 19px;
-
-    color: #23DD7A;
+    margin-bottom: 10px;
 `

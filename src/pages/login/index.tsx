@@ -7,19 +7,19 @@ import { api } from '../../services/api';
 
 import { useForm } from "react-hook-form";
 
-
 import { Container, Title, Column, TitleLogin, SubtitleLogin, EsqueciText, CriarText, Row, Wrapper } from './styles';
+import { IFormData } from "./types";
 
 const Login = () => {
 
     const navigate = useNavigate()
 
-    const { control, handleSubmit, formState: { errors } } = useForm({
+    const { control, handleSubmit, formState: { errors } } = useForm<IFormData>({
         reValidateMode: 'onChange',
         mode: 'onChange',
     });
 
-    const onSubmit = async (formData) => {
+    const onSubmit = async (formData : IFormData) => {
         try{
             const {data} = await api.get(`/users?email=${formData.email}&senha=${formData.senha}`);
             
@@ -50,7 +50,7 @@ const Login = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Input placeholder="E-mail" leftIcon={<MdEmail />} name="email"  control={control} />
                     {errors.email && <span>E-mail é obrigatório</span>}
-                    <Input type="password" placeholder="Senha" leftIcon={<MdLock />}  name="senha" control={control} />
+                    <Input type="password" placeholder="Senha" leftIcon={<MdLock/>} name="senha" control={control}/>
                     {errors.senha && <span>Senha é obrigatório</span>}
                     <Button title="Entrar" variant="secondary" type="submit"/>
                 </form>
